@@ -10,7 +10,7 @@ CORS(app)
 # Base URL for the AWS bucket
 S3_BASE_URL = 'https://indian-supreme-court-judgments.s3.ap-south-1.amazonaws.com'
 
-@app.route('/search', methods=['GET'])
+@app.route('/api/index', methods=['GET'])
 def search_judgments():
     year = request.args.get('year')
     query = request.args.get('query', '')
