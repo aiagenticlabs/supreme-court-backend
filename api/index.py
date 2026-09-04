@@ -25,6 +25,9 @@ def search_judgments():
         
         # Connect to an in-memory DuckDB instance
         con = duckdb.connect()
+
+        con.execute("SET home_directory='/tmp';")
+        con.execute("SET extension_directory='/tmp';")
         
         # Define the Parquet file URL on AWS
         parquet_url = f"{S3_BASE_URL}/metadata/parquet/year={year}/metadata.parquet"
